@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #map {
+        height: 400px;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Mapa com marcadores para local de partida e chegada</h3>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var startLatLng = {lat: -25.363, lng: 131.044};
+        var endLatLng = {lat: -23.363, lng: 130.044};
+
+        var map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 4,
+          center: startLatLng
+        });
+
+        var startMarker = new google.maps.Marker({
+          position: startLatLng,
+          map: map,
+          title: "Local de partida"
+        });
+
+        var endMarker = new google.maps.Marker({
+          position: endLatLng,
+          map: map,
+          title: "Local de chegada"
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxgxgovOujrc3BbmFxAWzi4C0rwOs3AnU&callback=initMap">
+    </script>
+  </body>
+</html>
